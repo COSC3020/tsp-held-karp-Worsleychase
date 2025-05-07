@@ -51,11 +51,11 @@ reasoning, to this markdown file.
 
 The algorithm takes in some set of cities, of length n, and we recursively call the hkMinDist function with less and less cities (n-1, n-2,...). That means for n cities, we have $2^n$ total amount of sets to pass into hkMinDist. But for each combination we need to try each city as the start, a linear operation O(n). That means we get $n\cdot 2^n$ total calls to hkMinDist. For each call, we just iterate through each city linearly O(n). That means our worst case time complexity is:
 
-$$ \Theta(n^2 \cdot 2^n) \rightarrow \Theta(2^n)$$
+$$ \Theta(n^2 \cdot 2^n)$$
 
 For the memory complexity, the memo array stores the results for every _unique_ call. This means that we store $n\cdot 2^n$ results for each call. Therefore, our worst-case memory complexity is
 
-$$ \Theta(n\cdot 2^n) \rightarrow \Theta(2^n) $$
+$$ \Theta(n\cdot 2^n)$$
 
 # Disclaimer
 
