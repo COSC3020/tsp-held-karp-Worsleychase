@@ -46,3 +46,19 @@ Test your new function; I've provided some basic testing code in `code.test.js`.
 What is the worst-case asymptotic time complexity of your implementation? What
 is the worst-case asymptotic memory complexity? Add your answer, including your
 reasoning, to this markdown file.
+
+# Solution
+
+The algorithm takes in some set of cities, of length n, and we recursively call the hkMinDist function with less and less cities (n-1, n-2,...). That means for n cities, we have $2^n$ total amount of sets to pass into hkMinDist. But for each combination we need to try each city as the start, a linear operation O(n). That means we get $n\cdot 2^n$ total calls to hkMinDist. For each call, we just iterate through each city linearly O(n). That means our worst case time complexity is:
+
+$$ \Theta(n^2 \cdot 2^n) \rightarrow \Theta(2^n)$$
+
+For the memory complexity, the memo array stores the results for every _unique_ call. This means that we store $n\cdot 2^n$ results for each call. Therefore, our worst-case memory complexity is
+
+$$ \Theta(n\cdot 2^n) \rightarrow \Theta(2^n) $$
+
+# Disclaimer
+
+I used [this](https://en.wikipedia.org/wiki/Held%E2%80%93Karp_algorithm) to get a better understanding of the Held-Karp algorithm
+
+I certify that I have listed all sources used to complete this exercise, including the use of any Large Language Models. All of the work is my own, except where stated otherwise. I am aware that plagiarism carries severe penalties and that if plagiarism is suspected, charges may be filed against me without prior notice.
